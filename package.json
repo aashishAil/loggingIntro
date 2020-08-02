@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aashishAil/loggingIntro/issues"
   },
-  "homepage": "https://github.com/aashishAil/loggingIntro#readme"
+  "homepage": "https://github.com/aashishAil/loggingIntro#readme",
+  "dependencies": {
+    "winston": "^3.3.3"
+  }
 }
