@@ -1,0 +1,19 @@
+{
+  "name": "loggingintro",
+  "version": "1.0.0",
+  "description": "A basic setup of logging for your node application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aashishAil/loggingIntro.git"
+  },
+  "author": "Aashish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aashishAil/loggingIntro/issues"
+  },
+  "homepage": "https://github.com/aashishAil/loggingIntro#readme"
+}
