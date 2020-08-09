@@ -1,7 +1,6 @@
 const express = require('express');
 const logger = require('./logger');
 
-
 const APP_DEFAULT_PORT = 12341;
 
 const app = express();
@@ -12,6 +11,8 @@ const server = app.listen(app.get('port'), function() {
   logger.warn(`I am a warn log message`);
   logger.error(`I am an error log message`);
 });
+
+app.use(logResponse)
 
 try{
   throw new Error('I am a custom error');

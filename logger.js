@@ -45,35 +45,35 @@ generalLogger.stream = {
   }
 };
 
-let log = (message) => {
+const log = (message) => {
   generalLogger.log({
     level : 'verbose',
     message : message
   });
 };
 
-let debug = (message) => {
+const debug = (message) => {
   generalLogger.log({
     level : 'debug',
     message : message
   });
 };
 
-let info = (message) => {
+const info = (message) => {
   generalLogger.log({
     level : 'info',
     message : message
   });
 };
 
-let warn = (message) => {
+const warn = (message) => {
   generalLogger.log({
     level : 'warn',
     message : message
   });
 };
 
-let error = (message) => {
+const error = (message) => {
   generalLogger.log({
     level : 'error',
     message : message
