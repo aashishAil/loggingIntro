@@ -12,3 +12,9 @@ const server = app.listen(app.get('port'), function() {
   logger.warn(`I am a warn log message`);
   logger.error(`I am an error log message`);
 });
+
+try{
+  throw new Error('I am a custom error');
+}catch(err){
+  logger.error(err);
+}

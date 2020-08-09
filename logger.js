@@ -1,11 +1,24 @@
 const { createLogger, format: {combine, timestamp, printf, colorize}, transports } = require('winston');
 
+const replaceErrors = (key, value) => {
+  if (value instanceof Error) {
+    let error = {};
+
+    Object.getOwnPropertyNames(value).forEach((newKey) => {
+      error[newKey] = value[newKey];
+    });
+
+    return error;
+  }
+
+  return value;
+};
 
 const formatter = printf((info) => {
   let object = {
       message : info.message
     };
-  return `${info.timestamp} ${info.level} ${JSON.stringify(object)}`;
+  return `${info.timestamp} ${info.level} ${JSON.stringify(object, replaceErrors)}`;
   });
 
 const generalLogger = createLogger({
