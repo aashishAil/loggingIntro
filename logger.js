@@ -1,8 +1,28 @@
-const { createLogger, transports } = require('winston');
+const { createLogger, format: {combine, timestamp, printf, colorize}, transports } = require('winston');
+
+
+const formatter = printf((info) => {
+  let object = {
+      message : info.message
+    };
+  return `${info.timestamp} ${info.level} ${JSON.stringify(object)}`;
+  });
 
 const generalLogger = createLogger({
+  format : combine(
+    colorize(),
+    timestamp(),
+    formatter
+  ),
   transports : [
-    new transports.Console()
+    new transports.Console({
+      json : true,
+      colorize : process.stdout.isTTY,
+      timestamp: function () {
+        return (new Date()).toLocaleTimeString();
+      },
+      prettyPrint : true
+    })
   ]
 });
 

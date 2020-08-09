@@ -9,4 +9,6 @@ app.set('port', process.env.PORT || APP_DEFAULT_PORT);
 
 const server = app.listen(app.get('port'), function() {
   logger.info(`Express server listening on port ${server.address().port}`);
+  logger.warn(`I am a warn log message`);
+  logger.error(`I am an error log message`);
 });
